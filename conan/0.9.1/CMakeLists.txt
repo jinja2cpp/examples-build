@@ -6,7 +6,9 @@ include (../cmake/conan.cmake)
 conan_cmake_run(REQUIRES 
 					jinja2cpp/0.9.1@Manu343726/testing
 					gtest/1.7.0@bincrafters/stable
-                BASIC_SETUP 
+                BASIC_SETUP
+				SETTINGS
+					compiler.libcxx=libstdc++11
 				OPTIONS 
 					jinja2cpp:shared=False
 					gtest:shared=False
