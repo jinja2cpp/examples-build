@@ -32,7 +32,7 @@ init:
 build_script:
   - mkdir -p build && cd build
   - cmake ..\%EXAMPLE_PATH% -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=%configuration%
-  - cmake --build . --target all --config Release
+  - cmake --build . --config Release
 
 test_script:
   - ctest -C Release -V
