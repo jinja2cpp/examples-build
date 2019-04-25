@@ -1,0 +1,29 @@
+language: cpp
+
+dist: trusty
+sudo: required
+
+matrix:
+  include:
+    - os: linux
+      compiler: gcc
+      env: EXAMPLE_PATH=conan/0.9.1
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['cmake']
+
+install:
+  # Install conan
+  - pip install --user -q conan
+  # Automatic detection of your arch, compiler, etc.
+  - conan user
+  - conan remote add martin https://api.bintray.com/conan/martinmoene/nonstd-lite
+  - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+  - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
+
+script:
+  - mkdir build && cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release ../${EXAMPLE_PATH}
+  - cmake --build .
+  - ctest . -C Release -V
