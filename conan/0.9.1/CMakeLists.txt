@@ -2,13 +2,15 @@ cmake_minimum_required (VERSION 3.0.0 FATAL_ERROR)
 project (Jinja2CppBuildTest CXX)
 
 include (../cmake/conan.cmake)
+if (NOT MSVC)
+	set (CONAN_SETTINGS SETTINGS compiler.libcxx=libstdc++11)
+endif ()
 
 conan_cmake_run(REQUIRES 
 					jinja2cpp/0.9.1@Manu343726/testing
 					gtest/1.7.0@bincrafters/stable
                 BASIC_SETUP
-				SETTINGS
-					compiler.libcxx=libstdc++11
+				${CONAN_SETTINGS}
 				OPTIONS 
 					jinja2cpp:shared=False
 					gtest:shared=False
