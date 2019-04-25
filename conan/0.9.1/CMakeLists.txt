@@ -18,6 +18,9 @@ set (TARGET_NAME jinja2cpp_build_test)
 add_executable (${TARGET_NAME} main.cpp)
 
 target_link_libraries (${TARGET_NAME} ${CONAN_LIBS})
+set_target_properties (${TARGET_NAME} PROPERTIES
+            CXX_STANDARD 14
+            CXX_STANDARD_REQUIRED ON)
 
 enable_testing()
 
