@@ -7,11 +7,13 @@ matrix:
   include:
     - os: linux
       compiler: gcc
-      env: EXAMPLE_PATH=conan/0.9.1
+      env:
+        EXAMPLE_PATH=conan/0.9.1
+        COMPILER=g++-5
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['cmake']
+          packages: ['cmake', 'g++-5']
 
 install:
   # Install conan
@@ -23,6 +25,7 @@ install:
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
 
 script:
+  - export CXX=${COMPILER}
   - mkdir build && cd build
   - cmake -DCMAKE_BUILD_TYPE=Release ../${EXAMPLE_PATH}
   - cmake --build .
