@@ -30,9 +30,9 @@ init:
   - conan remote add martin https://api.bintray.com/conan/martinmoene/nonstd-lite
   - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
-  - git submodule update --init
 
 build_script:
+  - git submodule update --init
   - mkdir -p build && cd build
   - cmake ..\%EXAMPLE_PATH% -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=%configuration%
   - cmake --build . --config Release
