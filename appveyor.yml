@@ -25,7 +25,7 @@ init:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" if "%BUILD_PLATFORM%"=="x64" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" if "%BUILD_PLATFORM%"=="x64" set PATH=%BOOST_ROOT%\lib64-msvc-14.1;%PATH%
   - set PATH=%PATH%;%PYTHON%/Scripts/
-  - pip install -s conan
+  - pip install -q conan
   - conan user
   - conan remote add martin https://api.bintray.com/conan/martinmoene/nonstd-lite
   - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
