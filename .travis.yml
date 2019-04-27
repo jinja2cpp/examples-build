@@ -35,5 +35,5 @@ install:
 
 script:
   - export CXX=${COMPILER}
-  - ./build.sh
-  - ./test.sh
+  - ${EXAMPLE_PATH}/build.sh
+  - ${EXAMPLE_PATH}/test.sh
