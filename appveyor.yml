@@ -14,8 +14,8 @@ environment:
   matrix:
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/0.9.1
-    - BUILD_PLATFORM: x64
-      EXAMPLE_PATH: internal
+#    - BUILD_PLATFORM: x64
+#      EXAMPLE_PATH: internal
 
 matrix:
   fast_finish: false
@@ -32,10 +32,9 @@ init:
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
 
 build_script:
-  - git submodule update --init
-  - mkdir -p build && cd build
-  - cmake ..\%EXAMPLE_PATH% -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=%configuration%
-  - cmake --build . --config Release
+# - git submodule update --init
+  - build.bat
 
 test_script:
-  - ctest -C Release -V
+  - test.bat
+#  - ctest -C Release -V

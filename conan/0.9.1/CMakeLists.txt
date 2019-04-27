@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.0.0 FATAL_ERROR)
 project (Jinja2CppBuildTest CXX)
 
-include (../cmake/conan.cmake)
+include (../../cmake/conan.cmake)
 if (NOT MSVC)
     set (CONAN_SETTINGS SETTINGS compiler.libcxx=libstdc++11)
 endif ()

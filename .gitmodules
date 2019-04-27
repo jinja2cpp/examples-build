@@ -1,0 +1,4 @@
+[submodule "thirdparty/Jinja2Cpp"]
+	path = thirdparty/Jinja2Cpp
+	url = https://github.com/jinja2cpp/Jinja2Cpp.git
+	branch = cmake_deps_mode

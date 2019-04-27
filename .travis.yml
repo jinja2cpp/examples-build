@@ -14,15 +14,15 @@ matrix:
         apt:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['cmake', 'g++-5']
-    - os: linux
-      compiler: gcc
-      env:
-        EXAMPLE_PATH=internal
-        COMPILER=g++-5
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['cmake', 'g++-5']
+#    - os: linux
+#      compiler: gcc
+#      env:
+#       EXAMPLE_PATH=internal
+#        COMPILER=g++-5
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test']
+#          packages: ['cmake', 'g++-5']
 
 install:
   # Install conan
@@ -35,7 +35,5 @@ install:
 
 script:
   - export CXX=${COMPILER}
-  - mkdir build && cd build
-  - cmake -DCMAKE_BUILD_TYPE=Release ../${EXAMPLE_PATH}
-  - cmake --build .
-  - ctest . -C Release -V
+  - ./build.sh
+  - ./test.sh
