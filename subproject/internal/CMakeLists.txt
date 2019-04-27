@@ -19,7 +19,7 @@ set (TARGET_NAME jinja2cpp_build_test)
 
 set (JINJA2CPP_DEPS_MODE internal)
 
-add_subdirectory (../../thirdparty/jinja2cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
+add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 
 add_executable (${TARGET_NAME} main.cpp)
 
