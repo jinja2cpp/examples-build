@@ -36,5 +36,5 @@ build_script:
   - %EXAMPLE_PATH%\build.bat
 
 test_script:
-  - %EXAMPLE_PATH%\test.bat
+  - .\%EXAMPLE_PATH%\test.bat
 #  - ctest -C Release -V
