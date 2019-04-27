@@ -1,3 +1,0 @@
-[submodule "internal/thirdparty/jinja2cpp"]
-	path = internal/thirdparty/jinja2cpp
-	url = https://github.com/jinja2cpp/Jinja2Cpp.git
