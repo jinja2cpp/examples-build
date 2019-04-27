@@ -16,6 +16,8 @@ environment:
       EXAMPLE_PATH: conan/0.9.1
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: subproject/internal
+    - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: subproject/external_boost
 
 matrix:
   fast_finish: false
