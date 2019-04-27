@@ -37,5 +37,6 @@ build_script:
   - build.bat
 
 test_script:
-  - test.bat
+  - cd
+  - ..\test.bat
 #  - ctest -C Release -V
