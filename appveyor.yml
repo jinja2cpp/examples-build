@@ -14,8 +14,8 @@ environment:
   matrix:
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/0.9.1
-#    - BUILD_PLATFORM: x64
-#      EXAMPLE_PATH: internal
+    - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: subproject/internal
 
 matrix:
   fast_finish: false
@@ -32,7 +32,7 @@ init:
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
 
 build_script:
-# - git submodule update --init
+  - git submodule update --init
   - cd %EXAMPLE_PATH%
   - build.bat
 

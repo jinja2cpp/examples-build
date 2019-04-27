@@ -3,26 +3,17 @@ language: cpp
 dist: trusty
 sudo: required
 
-matrix:
-  include:
-    - os: linux
-      compiler: gcc
-      env:
-        EXAMPLE_PATH=conan/0.9.1
-        COMPILER=g++-5
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['cmake', 'g++-5']
-#    - os: linux
-#      compiler: gcc
-#      env:
-#       EXAMPLE_PATH=internal
-#        COMPILER=g++-5
-#      addons:
-#        apt:
-#          sources: ['ubuntu-toolchain-r-test']
-#          packages: ['cmake', 'g++-5']
+git:
+  submodules: false
+
+addons:
+  apt:
+    sources: ['ubuntu-toolchain-r-test']
+    packages: ['cmake', 'g++-5']
+
+env:
+  - EXAMPLE_PATH=conan/0.9.1 COMPILER=g++-5
+  - EXAMPLE_PATH=subproject/internal COMPILER=g++-5
 
 install:
   # Install conan
@@ -35,6 +26,7 @@ install:
 
 script:
   - export CXX=${COMPILER}
+  - git submodule update --init
   - cd ${EXAMPLE_PATH}
   - ./build.sh
   - ./test.sh

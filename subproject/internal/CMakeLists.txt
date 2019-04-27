@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.0.0 FATAL_ERROR)
 project (Jinja2CppBuildTest CXX)
 
-include (../conan/cmake/conan.cmake)
+include (../../cmake/conan.cmake)
 if (NOT MSVC)
     set (CONAN_SETTINGS SETTINGS compiler.libcxx=libstdc++11)
 endif ()
@@ -19,7 +19,7 @@ set (TARGET_NAME jinja2cpp_build_test)
 
 set (JINJA2CPP_DEPS_MODE internal)
 
-add_subdirectory (thirdparty/jinja2cpp)
+add_subdirectory (../../thirdparty/jinja2cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 
 add_executable (${TARGET_NAME} main.cpp)
 
