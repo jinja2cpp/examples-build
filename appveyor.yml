@@ -33,8 +33,9 @@ init:
 
 build_script:
 # - git submodule update --init
-  - %EXAMPLE_PATH%\build.bat
+  - cd %EXAMPLE_PATH%
+  - build.bat
 
 test_script:
-  - .\%EXAMPLE_PATH%\test.bat
+  - test.bat
 #  - ctest -C Release -V
