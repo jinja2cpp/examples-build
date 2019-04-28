@@ -18,6 +18,8 @@ environment:
       EXAMPLE_PATH: subproject/internal
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: subproject/external_boost
+    - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: subproject/external
 
 matrix:
   fast_finish: false

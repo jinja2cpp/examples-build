@@ -15,6 +15,7 @@ env:
   - EXAMPLE_PATH=conan/0.9.1 COMPILER=g++-5
   - EXAMPLE_PATH=subproject/internal COMPILER=g++-5
   - EXAMPLE_PATH=subproject/external_boost COMPILER=g++-5 
+  - EXAMPLE_PATH=subproject/external COMPILER=g++-5 
 # SYSTEM_BOOST_PACKAGE=YES
 
 before_install:

@@ -2,3 +2,15 @@
 	path = thirdparty/Jinja2Cpp
 	url = https://github.com/jinja2cpp/Jinja2Cpp.git
 	branch = cmake_deps_mode
+[submodule "thirdparty/expected-lite"]
+	path = thirdparty/expected-lite
+	url = https://github.com/martinmoene/expected-lite.git
+[submodule "thirdparty/optional-lite"]
+	path = thirdparty/optional-lite
+	url = https://github.com/martinmoene/optional-lite.git
+[submodule "thirdparty/variant-lite"]
+	path = thirdparty/variant-lite
+	url = https://github.com/martinmoene/variant-lite.git
+[submodule "thirdparty/value-ptr-lite"]
+	path = thirdparty/value-ptr-lite
+	url = https://github.com/martinmoene/value-ptr-lite.git
