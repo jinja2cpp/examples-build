@@ -21,10 +21,12 @@ conan_cmake_run(REQUIRES
 					boost:shared=False
                 BUILD missing)
                 
+conan_define_targets()
                 
 set (TARGET_NAME jinja2cpp_build_test)
 
 set (JINJA2CPP_DEPS_MODE conan-build)
+set (JINJA2CPP_USE_CONANPKG_PREFIX ON)
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 
