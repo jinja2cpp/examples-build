@@ -8,30 +8,29 @@ endif ()
 
 conan_cmake_run(REQUIRES 
                     gtest/1.7.0@bincrafters/stable
+					variant-lite/1.2.1@nonstd-lite/stable
+					expected-lite/0.3.0@nonstd-lite/stable
+					value-ptr-lite/0.2.1@nonstd-lite/stable
+					optional-lite/3.2.0@nonstd-lite/stable
+					boost/1.69.0@conan/stable
                 BASIC_SETUP
                 ${CONAN_SETTINGS}
                 OPTIONS 
+                    jinja2cpp:shared=False
                     gtest:shared=False
+					boost:shared=False
                 BUILD missing)
                 
                 
 set (TARGET_NAME jinja2cpp_build_test)
 
-set (JINJA2CPP_DEPS_MODE external)
-
-set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/expected-lite
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/variant-lite
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/optional-lite
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/value-ptr-lite
-    c:/.conan/e339c6/1
-)
+set (JINJA2CPP_DEPS_MODE conan-build)
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 
 add_executable (${TARGET_NAME} main.cpp)
 
-target_link_libraries (${TARGET_NAME} ${CONAN_LIBS} jinja2cpp)
+target_link_libraries (${TARGET_NAME} jinja2cpp ${CONAN_LIBS_GTEST})
 set_target_properties (${TARGET_NAME} PROPERTIES
             CXX_STANDARD 14
             CXX_STANDARD_REQUIRED ON)
