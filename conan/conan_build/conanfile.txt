@@ -1,0 +1,16 @@
+[requires]
+gtest/1.7.0@bincrafters/stable
+variant-lite/1.2.1@nonstd-lite/stable
+expected-lite/0.3.0@nonstd-lite/stable
+value-ptr-lite/0.2.1@nonstd-lite/stable
+optional-lite/3.2.0@nonstd-lite/stable
+boost/1.69.0@conan/stable
+
+[options]
+jinja2cpp:shared=False
+gtest:shared=False
+boost:shared=False
+
+[generators]
+cmake_find_package
+    

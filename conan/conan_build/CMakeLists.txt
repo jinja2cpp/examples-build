@@ -6,27 +6,12 @@ if (NOT MSVC)
     set (CONAN_SETTINGS SETTINGS compiler.libcxx=libstdc++11)
 endif ()
 
-conan_cmake_run(REQUIRES 
-                    gtest/1.7.0@bincrafters/stable
-					variant-lite/1.2.1@nonstd-lite/stable
-					expected-lite/0.3.0@nonstd-lite/stable
-					value-ptr-lite/0.2.1@nonstd-lite/stable
-					optional-lite/3.2.0@nonstd-lite/stable
-					boost/1.69.0@conan/stable
-                BASIC_SETUP
-                ${CONAN_SETTINGS}
-                OPTIONS 
-                    jinja2cpp:shared=False
-                    gtest:shared=False
-					boost:shared=False
-                BUILD missing)
-                
-conan_define_targets()
+set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_BINARY_DIR})
                 
 set (TARGET_NAME jinja2cpp_build_test)
 
 set (JINJA2CPP_DEPS_MODE conan-build)
-set (JINJA2CPP_USE_CONANPKG_PREFIX ON)
+# set (JINJA2CPP_USE_CONANPKG_PREFIX ON)
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 
