@@ -19,7 +19,7 @@ add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdpa
 
 add_executable (${TARGET_NAME} main.cpp)
 
-target_link_libraries (${TARGET_NAME} jinja2cpp gtest::gtest)
+target_link_libraries (${TARGET_NAME} gtest::gtest jinja2cpp)
 set_target_properties (${TARGET_NAME} PROPERTIES
             CXX_STANDARD 14
             CXX_STANDARD_REQUIRED ON)
