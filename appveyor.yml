@@ -17,6 +17,8 @@ environment:
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/conan_build
     - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: external/internal
+    - BUILD_PLATFORM: x64
       EXAMPLE_PATH: subproject/internal
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: subproject/external_boost
