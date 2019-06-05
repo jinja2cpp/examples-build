@@ -17,7 +17,7 @@ conan_cmake_run(REQUIRES
                 
 set (TARGET_NAME jinja2cpp_build_test)
 
-set (JINJA2CPP_DEPS_MODE internal)
+set (JINJA2CPP_DEPS_MODE internal CACHE STRING "" FORCE)
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
 

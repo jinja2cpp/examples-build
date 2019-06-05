@@ -17,7 +17,7 @@ conan_cmake_run(REQUIRES
                 
 set (TARGET_NAME jinja2cpp_build_test)
 
-set (JINJA2CPP_DEPS_MODE external)
+set (JINJA2CPP_DEPS_MODE external CACHE STRING "" FORCE)
 
 set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/expected-lite
