@@ -23,8 +23,8 @@ set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}
     ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/expected-lite
     ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/variant-lite
     ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/optional-lite
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/value-ptr-lite
-    c:/.conan/e339c6/1
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/string-view-lite
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/fmt
 )
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)

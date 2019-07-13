@@ -14,3 +14,9 @@
 [submodule "thirdparty/value-ptr-lite"]
 	path = thirdparty/value-ptr-lite
 	url = https://github.com/martinmoene/value-ptr-lite.git
+[submodule "thirdparty/string-view-lite"]
+	path = thirdparty/string-view-lite
+	url = https://github.com/martinmoene/string-view-lite.git
+[submodule "thirdparty/fmt"]
+	path = thirdparty/fmt
+	url = https://github.com/fmtlib/fmt.git
