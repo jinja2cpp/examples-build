@@ -39,6 +39,7 @@ install:
 
 script:
   - export CXX=g++-${COMPILER_VERSION}
+  - conan profile new --detect default
   - git submodule update --init
   - conan profile update settings.compiler.version=${COMPILER_VERSION} default
   - cd ${EXAMPLE_PATH}
