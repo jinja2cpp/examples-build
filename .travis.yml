@@ -9,17 +9,17 @@ git:
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']
-    packages: ['cmake', 'g++-5']
+    packages: ['cmake', 'g++-6']
 
 env:
-  - EXAMPLE_PATH=conan/0.9.1 COMPILER=g++-5
-  - EXAMPLE_PATH=conan/conan_build COMPILER=g++-5
-  - EXAMPLE_PATH=external/internal COMPILER=g++-5
-  - EXAMPLE_PATH=external/external_boost COMPILER=g++-5 USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=external/external COMPILER=g++-5 USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=subproject/internal COMPILER=g++-5
-  - EXAMPLE_PATH=subproject/external_boost COMPILER=g++-5  USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=subproject/external COMPILER=g++-5  USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=conan/0.9.1 COMPILER=g++-6
+  - EXAMPLE_PATH=conan/conan_build COMPILER=g++-6
+  - EXAMPLE_PATH=external/internal COMPILER=g++-6
+  - EXAMPLE_PATH=external/external_boost COMPILER=g++-6 USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=external/external COMPILER=g++-6 USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=subproject/internal COMPILER=g++-6
+  - EXAMPLE_PATH=subproject/external_boost COMPILER=g++-6  USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=subproject/external COMPILER=g++-6  USE_BOOST_PACKAGE=1
 # SYSTEM_BOOST_PACKAGE=YES
 
 before_install:
