@@ -12,14 +12,14 @@ addons:
     packages: ['cmake', 'g++-6']
 
 env:
-  - EXAMPLE_PATH=conan/0.9.1 COMPILER=g++-6
-  - EXAMPLE_PATH=conan/conan_build COMPILER=g++-6
-  - EXAMPLE_PATH=external/internal COMPILER=g++-6
-  - EXAMPLE_PATH=external/external_boost COMPILER=g++-6 USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=external/external COMPILER=g++-6 USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=subproject/internal COMPILER=g++-6
-  - EXAMPLE_PATH=subproject/external_boost COMPILER=g++-6  USE_BOOST_PACKAGE=1
-  - EXAMPLE_PATH=subproject/external COMPILER=g++-6  USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=conan/0.9.1 COMPILER_VERSION=6
+  - EXAMPLE_PATH=conan/conan_build COMPILER_VERSION=6
+  - EXAMPLE_PATH=external/internal COMPILER_VERSION=6
+  - EXAMPLE_PATH=external/external_boost COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=external/external COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=subproject/internal COMPILER_VERSION=6
+  - EXAMPLE_PATH=subproject/external_boost COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
+  - EXAMPLE_PATH=subproject/external COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
 # SYSTEM_BOOST_PACKAGE=YES
 
 before_install:
@@ -38,8 +38,9 @@ install:
 #  - sudo apt-get install libboost1.60-all-dev
 
 script:
-  - export CXX=${COMPILER}
+  - export CXX=g++-${COMPILER_VERSION}
   - git submodule update --init
+  - conan profile update settings.compiler.version=${COMPILER_VERSION} default
   - cd ${EXAMPLE_PATH}
   - ./build.sh
   - ./test.sh
