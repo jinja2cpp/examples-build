@@ -1,6 +1,6 @@
 language: cpp
 
-dist: trusty
+dist: bionic
 sudo: required
 
 git:
@@ -9,10 +9,11 @@ git:
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']
-    packages: ['cmake', 'g++-6', 'binutils-2.26']
+    packages: ['cmake', 'g++-6']
 
 env:
   - EXAMPLE_PATH=conan/0.9.1 COMPILER_VERSION=6
+  - EXAMPLE_PATH=conan/1.0.0 COMPILER_VERSION=6
   - EXAMPLE_PATH=conan/conan_build COMPILER_VERSION=6
   - EXAMPLE_PATH=external/internal COMPILER_VERSION=6
   - EXAMPLE_PATH=external/external_boost COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
@@ -39,7 +40,6 @@ install:
 
 script:
   - export CXX=g++-${COMPILER_VERSION}
-  - export PATH=/usr/lib/binutils-2.26/bin:${PATH}
   - conan profile new --detect default
   - git submodule update --init
   - conan profile update settings.compiler.version=${COMPILER_VERSION} default
