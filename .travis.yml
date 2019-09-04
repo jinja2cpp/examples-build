@@ -39,6 +39,7 @@ install:
 
 script:
   - export CXX=g++-${COMPILER_VERSION}
+  - export PATH=/usr/lib/binutils-2.26/bin:${PATH}
   - conan profile new --detect default
   - git submodule update --init
   - conan profile update settings.compiler.version=${COMPILER_VERSION} default
