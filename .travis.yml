@@ -9,7 +9,7 @@ git:
 addons:
   apt:
     sources: ['ubuntu-toolchain-r-test']
-    packages: ['cmake', 'g++-6']
+    packages: ['cmake', 'g++-6', 'binutils-2.26']
 
 env:
   - EXAMPLE_PATH=conan/0.9.1 COMPILER_VERSION=6
