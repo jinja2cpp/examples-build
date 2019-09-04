@@ -46,6 +46,7 @@ init:
   - conan remote add martin https://api.bintray.com/conan/martinmoene/nonstd-lite
   - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
+  - conan remote add flexferrum https://api.bintray.com/conan/flexferrum/conan-packages
 
 build_script:
   - git submodule update --init
