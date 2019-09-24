@@ -42,7 +42,7 @@ init:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" if "%BUILD_PLATFORM%"=="x64" set PATH=%BOOST_ROOT%\lib64-msvc-14.0;%PATH%
   - set PATH=%PATH%;%PYTHON%/Scripts/
   - pip install -q conan
-  - pip install "urllib3=1.25.3" --force-reinstall
+  - pip install "urllib3==1.25.3" --force-reinstall
   - conan user
   - conan remote add martin https://api.bintray.com/conan/martinmoene/nonstd-lite
   - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
