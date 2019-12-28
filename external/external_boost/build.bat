@@ -1,3 +1,7 @@
+rmdir /S /Q .build
+rmdir /S /Q .jinja2cpp-build
+rmdir /S /Q .jinja2cpp-install
+
 mkdir .jinja2cpp-build
 mkdir .jinja2cpp-install
 cd .jinja2cpp-build

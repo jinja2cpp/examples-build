@@ -1,3 +1,7 @@
+rmdir /S /Q .build
+rmdir /S /Q .jinja2cpp-build
+rmdir /S /Q .jinja2cpp-install
+
 mkdir .jinja2cpp-build
 mkdir .jinja2cpp-install
 cd .jinja2cpp-build
@@ -8,4 +12,4 @@ mkdir .build
 cd .build
 cmake ..\ -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release -Djinja2cpp_DIR=..\.jinja2cpp-install\lib\jinja2cpp
 cmake --build . --config Release
-
+cd ..
