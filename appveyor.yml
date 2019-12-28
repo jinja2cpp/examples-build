@@ -13,17 +13,17 @@ configuration:
 environment:
   matrix:
     - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: external/external
+    - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: external/internal
+    - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/0.9.1
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/1.0.0
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/conan_build
     - BUILD_PLATFORM: x64
-      EXAMPLE_PATH: external/internal
-    - BUILD_PLATFORM: x64
       EXAMPLE_PATH: external/external_boost
-    - BUILD_PLATFORM: x64
-      EXAMPLE_PATH: external/external
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: subproject/internal
     - BUILD_PLATFORM: x64
@@ -51,10 +51,10 @@ init:
 
 build_script:
   - git submodule update --init
-  - cd %EXAMPLE_PATH%
+  - cd C:\projects\examples-build\%EXAMPLE_PATH%
   - build.bat
 
 test_script:
-  - cd %EXAMPLE_PATH%
+  - cd C:\projects\examples-build\%EXAMPLE_PATH%
   - test.bat
 #  - ctest -C Release -V
