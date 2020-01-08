@@ -12,7 +12,7 @@ set (TARGET_NAME jinja2cpp_build_test)
 
 set (JINJA2CPP_DEPS_MODE conan-build)
 
-find_package(gtest)
+find_package(GTest)
 set (JINJA2CPP_DEPS_MODE conan-build CACHE STRING "" FORCE)
 
 add_subdirectory (../../thirdparty/Jinja2Cpp ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/jinja2cpp)
