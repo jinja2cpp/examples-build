@@ -14,6 +14,7 @@ addons:
 env:
   - EXAMPLE_PATH=conan/0.9.1 COMPILER_VERSION=6
   - EXAMPLE_PATH=conan/1.0.0 COMPILER_VERSION=6
+  - EXAMPLE_PATH=conan/1.1.0 COMPILER_VERSION=6
   - EXAMPLE_PATH=conan/conan_build COMPILER_VERSION=6
   - EXAMPLE_PATH=external/internal COMPILER_VERSION=6
   - EXAMPLE_PATH=external/external_boost COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
@@ -21,11 +22,7 @@ env:
   - EXAMPLE_PATH=subproject/internal COMPILER_VERSION=6
   - EXAMPLE_PATH=subproject/external_boost COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
   - EXAMPLE_PATH=subproject/external COMPILER_VERSION=6 USE_BOOST_PACKAGE=1
-# SYSTEM_BOOST_PACKAGE=YES
 
-before_install:
-#  - if [[ "${USE_BOOST_PACKAGE}" != "" ]]; then sudo add-apt-repository -y ppa:samuel-bachmann/boost && sudo apt-get update -qq; fi
-#  - sudo add-apt-repository -y ppa:samuel-bachmann/boost && sudo apt-get update -qq
 
 install:
   # Install conan
@@ -37,7 +34,6 @@ install:
   - conan remote add manu https://api.bintray.com/conan/manu343726/conan-packages
   - conan remote add flexferrum https://api.bintray.com/conan/flexferrum/conan-packages
   - if [[ "${USE_BOOST_PACKAGE}" != "" ]]; then sudo apt-get install libboost-all-dev; fi
-#  - sudo apt-get install libboost1.60-all-dev
 
 script:
   - export CXX=g++-${COMPILER_VERSION}

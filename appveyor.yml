@@ -21,6 +21,8 @@ environment:
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/1.0.0
     - BUILD_PLATFORM: x64
+      EXAMPLE_PATH: conan/1.1.0
+    - BUILD_PLATFORM: x64
       EXAMPLE_PATH: conan/conan_build
     - BUILD_PLATFORM: x64
       EXAMPLE_PATH: external/external_boost
@@ -57,4 +59,3 @@ build_script:
 test_script:
   - cd C:\projects\examples-build\%EXAMPLE_PATH%
   - test.bat
-#  - ctest -C Release -V
